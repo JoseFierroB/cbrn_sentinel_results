@@ -1,16 +1,17 @@
 [green_agent]
-agentbeats_id = ""
-env = { API_KEY = "${GITHUB_SECRET_NAME}", LOG_LEVEL = "INFO" }
+# Tu ID oficial
+agentbeats_id = "019c170d-8270-75a0-b251-9129147d34ca"
+# Sentinel necesita la API Key para el Judge y el TAP
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", LOG_LEVEL = "INFO" }
 
 [[participants]]
-agentbeats_id = ""
-name = "role_1_name"
-env = {}
-
-[[participants]]
-agentbeats_id = ""
-name = "role_2_name"
+# Aquí pondrás el ID del agente que quieras evaluar
+agentbeats_id = "ID_DEL_AGENTE_PURPURA"
+name = "TargetAgent"
 env = {}
 
 [config]
-# Add your assessment config here
+# Configuración que Sentinel recibirá en el request A2A
+dataset = "tests/cbrn_comprehensive.csv"
+limit = 10
+seed = 42
